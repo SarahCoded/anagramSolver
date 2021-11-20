@@ -1,0 +1,12 @@
+{% extends "template.html" %}
+{% block content %}
+    <p class="title">Anagram Solver</p>
+    <form action="/submit" method="POST">
+    <div class="form-group">
+      <input name="anagram" type="text" pattern="[A-Za-z]{1,}" placeholder="Enter letters!" title="Please only enter letters">
+      <br>
+      <br>
+      <button class="btn btn-primary" type="submit">Find Anagrams!</button>
+    </div>
+    </form>
+{% endblock %}

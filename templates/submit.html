@@ -1,0 +1,50 @@
+{% extends "template.html" %}
+{% block content %}
+    <p class="title">Anagrams</p>
+    {% if valid_answers %}
+    <p class="psmall">Tap on the arrow to get the word's definition</p>
+    {% for answer in valid_answers %}
+    <h3 class="lookupWord" id='{{ answer }}'><b>{{ answer }} </b><span class="buttonArrow">➡️</span><span class="definition"></span></h3>
+    {% endfor %}
+    {% else %}
+    <h4>Sorry, no anagrams were found</h4>
+    {% endif %}
+    <form action="{{ url_for('index') }}" method="POST">
+        <input class="btn btn-primary" type="submit" value="Go Back"/>
+    </form>
+<script>
+    window.onload = function() {
+        let lookupWord = document.getElementsByClassName("lookupWord");
+        let definitionSpan = document.getElementsByClassName("definition");
+        let buttonArrow = document.getElementsByClassName("buttonArrow");
+        
+        // Loop over the class defs elements, and only call once for each individual element
+        for(let i = 0; i < lookupWord.length; i++)(function(i) {
+            buttonArrow[i].onclick = () => {
+                lookupFunction(i);
+            }
+        })(i);
+
+        function lookupFunction(i){
+            // Get the word to lookup from the element id 
+            word = lookupWord[i].id;
+            url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+            APIcall(url, i);
+        };
+
+        async function APIcall (url, i) {
+            try {
+                let response = await fetch(url);
+                let data = await response.json();
+                definition = data[0]["meanings"][0]["definitions"][0]["definition"];
+                buttonArrow[i].style.display = "none";
+                definitionSpan[i].innerHTML = "➡️ " + definition;
+            }
+            catch (error) {
+                buttonArrow[i].style.display = "none";
+                definitionSpan[i].innerHTML = "Sorry, definition not found!";
+            }
+        };
+}
+</script>
+{% endblock %}

@@ -1,0 +1,107 @@
+body {
+    text-align: center;
+    
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+.title {
+    font-weight: thin !important;
+    font-size: 10vw;
+}
+.psmall {
+    font-size: 20px;
+}
+
+.back_link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.btn {
+    font-size: 25px;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    border-radius: 8px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+.btn:focus,
+.btn:active:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus {
+    color: #333;
+    text-decoration: none;
+}
+.btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+/* primary
+---------------------------- */
+.btn-primary {
+    color: white;
+    background-color: #0275d8;
+    border-color: #ccc;
+}
+.btn-primary:focus {
+    color: white;
+    background-color: #0275d8;
+    border-color: #87cef0;
+}
+.btn-primary:hover {
+    color: white;
+    background-color: #0275d8;
+    border-color: #87cef0;
+}
+.btn-primary:active {
+    color: white;
+    background-color: rgb(159, 221, 250);
+    border-color: #87cef0;
+}
+
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 8px;
+    font-size: 18px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 0.7px solid #0275d8;
+}
+
+.flip_emoji {
+    transform: scale(-1, 1);
+    display: inline-block;
+}
+
+.definition {
+    font-weight: normal;
+}
+.buttonArrow:hover {
+    font-weight: normal;
+    cursor: pointer;
+}
+/* Prevent the title being 
+humongous on larger screens */
+@media screen and (min-width: 601px) {
+    .title {
+      font-size: 50px;
+    }
+  }
