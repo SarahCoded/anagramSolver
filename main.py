@@ -8,6 +8,8 @@ if __name__ == "__main__":
 
 def load_words(word_size, jumbledTextSorted):
     matches = []
+    if word_size <= 0 or word_size > 21:
+        return matches
     for k, v in words.items():
         if v == word_size:
             if ''.join(sorted(k)) == jumbledTextSorted:
