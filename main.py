@@ -14,7 +14,7 @@ def load_words(word_size, jumbledTextSorted):
                 matches.append(k)
     return matches
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/", methods=['GET'])
 def index():
     return render_template('index.html')
 

@@ -9,7 +9,7 @@
     {% else %}
     <h4>Sorry, no anagrams were found</h4>
     {% endif %}
-    <form action="{{ url_for('index') }}" method="POST">
+    <form action="{{ url_for('index') }}" method="GET">
         <input class="btn btn-primary" type="submit" value="Go Back"/>
     </form>
 <script>
